@@ -1,0 +1,41 @@
+{
+  "name": "2.0 \u7ACB\u4F53\u58F0",
+  "description": "\u5DE6\u53F3\u4E24\u58F0\u9053",
+  "layoutTag": "2.0",
+  "speakers": [
+    {
+      "id": "FL",
+      "x": 0.32,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "FR",
+      "x": 0.68,
+      "y": 0.18,
+      "heightTier": 0
+    }
+  ],
+  "routes": [
+    {
+      "channel": "FL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    }
+  ]
+}

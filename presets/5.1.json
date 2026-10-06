@@ -1,0 +1,105 @@
+{
+  "name": "5.1 \u73AF\u7ED5",
+  "description": "\u6807\u51C6 5.1",
+  "layoutTag": "5.1",
+  "speakers": [
+    {
+      "id": "FL",
+      "x": 0.3,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "FR",
+      "x": 0.7,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "FC",
+      "x": 0.5,
+      "y": 0.12,
+      "heightTier": 0
+    },
+    {
+      "id": "LFE",
+      "x": 0.5,
+      "y": 0.28,
+      "heightTier": 0
+    },
+    {
+      "id": "RL",
+      "x": 0.28,
+      "y": 0.82,
+      "heightTier": 0
+    },
+    {
+      "id": "RR",
+      "x": 0.72,
+      "y": 0.82,
+      "heightTier": 0
+    }
+  ],
+  "routes": [
+    {
+      "channel": "FL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FC",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 3,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "LFE",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 4,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "RL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "RR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    }
+  ]
+}

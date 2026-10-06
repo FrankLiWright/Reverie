@@ -1,0 +1,169 @@
+{
+  "name": "7.1.2 \u542B\u9AD8\u5EA6",
+  "description": "7.1 \u002B \u4E24\u53EA\u9876\u7F6E",
+  "layoutTag": "7.1.2",
+  "speakers": [
+    {
+      "id": "FL",
+      "x": 0.28,
+      "y": 0.16,
+      "heightTier": 0
+    },
+    {
+      "id": "FR",
+      "x": 0.72,
+      "y": 0.16,
+      "heightTier": 0
+    },
+    {
+      "id": "FC",
+      "x": 0.5,
+      "y": 0.1,
+      "heightTier": 0
+    },
+    {
+      "id": "LFE",
+      "x": 0.5,
+      "y": 0.26,
+      "heightTier": 0
+    },
+    {
+      "id": "SL",
+      "x": 0.14,
+      "y": 0.5,
+      "heightTier": 0
+    },
+    {
+      "id": "SR",
+      "x": 0.86,
+      "y": 0.5,
+      "heightTier": 0
+    },
+    {
+      "id": "RL",
+      "x": 0.28,
+      "y": 0.84,
+      "heightTier": 0
+    },
+    {
+      "id": "RR",
+      "x": 0.72,
+      "y": 0.84,
+      "heightTier": 0
+    },
+    {
+      "id": "TFL",
+      "x": 0.32,
+      "y": 0.3,
+      "heightTier": 1
+    },
+    {
+      "id": "TFR",
+      "x": 0.68,
+      "y": 0.3,
+      "heightTier": 1
+    }
+  ],
+  "routes": [
+    {
+      "channel": "FL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FC",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 3,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "LFE",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 4,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "SL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "SR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "RL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 3,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "RR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 4,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "TFL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "TFR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    }
+  ]
+}

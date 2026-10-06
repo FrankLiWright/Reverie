@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Reverie.Core\Reverie.Core.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <AssemblyName>Reverie</AssemblyName>
+    <RootNamespace>Reverie.Gui</RootNamespace>
+    <Product>Reverie</Product>
+    <AssemblyTitle>Reverie</AssemblyTitle>
+    <Description>Reverie - multichannel audio routing</Description>
+    <ApplicationIcon>Assets\Reverie.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Reverie.png" />
+    <Resource Include="Assets\Reverie.ico" />
+  </ItemGroup>
+
+</Project>

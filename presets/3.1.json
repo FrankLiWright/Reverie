@@ -1,0 +1,73 @@
+{
+  "name": "3.1 \u524D\u573A \u002B \u4F4E\u97F3",
+  "description": "\u524D\u5DE6/\u524D\u53F3/\u4E2D\u7F6E \u002B \u4F4E\u97F3",
+  "layoutTag": "3.1",
+  "speakers": [
+    {
+      "id": "FL",
+      "x": 0.3,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "FR",
+      "x": 0.7,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "FC",
+      "x": 0.5,
+      "y": 0.12,
+      "heightTier": 0
+    },
+    {
+      "id": "LFE",
+      "x": 0.5,
+      "y": 0.28,
+      "heightTier": 0
+    }
+  ],
+  "routes": [
+    {
+      "channel": "FL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FC",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 3,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "LFE",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    }
+  ]
+}

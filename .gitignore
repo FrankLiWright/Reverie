@@ -1,0 +1,19 @@
+# Build
+bin/
+obj/
+*.user
+*.suo
+
+# IDE
+.vs/
+.idea/
+*.userprefs
+
+# Test / scratch
+tools/
+smoke.png
+audiomeet-crash.log
+
+# OS
+Thumbs.db
+.DS_Store

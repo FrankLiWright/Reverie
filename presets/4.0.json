@@ -1,0 +1,73 @@
+{
+  "name": "4.0 \u56DB\u65B9",
+  "description": "\u524D\u5DE6\u53F3 \u002B \u540E\u5DE6\u53F3",
+  "layoutTag": "4.0",
+  "speakers": [
+    {
+      "id": "FL",
+      "x": 0.3,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "FR",
+      "x": 0.7,
+      "y": 0.18,
+      "heightTier": 0
+    },
+    {
+      "id": "RL",
+      "x": 0.28,
+      "y": 0.82,
+      "heightTier": 0
+    },
+    {
+      "id": "RR",
+      "x": 0.72,
+      "y": 0.82,
+      "heightTier": 0
+    }
+  ],
+  "routes": [
+    {
+      "channel": "FL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "FR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "RL",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 1,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    },
+    {
+      "channel": "RR",
+      "deviceId": "",
+      "deviceName": "",
+      "deviceChannel": 2,
+      "gainDb": 0,
+      "delayMs": 0,
+      "polarity": true,
+      "mute": false
+    }
+  ]
+}
