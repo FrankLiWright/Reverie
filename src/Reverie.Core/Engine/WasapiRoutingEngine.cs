@@ -23,6 +23,26 @@ public sealed class WasapiRoutingEngine : IDisposable
     private volatile bool _running;
     private volatile string _status = "已停止";
 
+    // 热路径复用缓冲，避免每包分配
+    private float[] _inputBuf = Array.Empty<float>();
+    private float[][] _planarBufs = Array.Empty<float[]>();
+
+    private void EnsureBuffers(int frames, int inputChannels, int slots)
+    {
+        int needInput = frames * inputChannels;
+        if (_inputBuf.Length < needInput)
+            _inputBuf = new float[needInput];
+
+        if (_planarBufs.Length != slots)
+            _planarBufs = new float[slots][];
+
+        for (int c = 0; c < slots; c++)
+        {
+            if (_planarBufs[c] is null || _planarBufs[c].Length < frames)
+                _planarBufs[c] = new float[frames];
+        }
+    }
+
     public string Status
     {
         get => _status;
@@ -236,13 +256,12 @@ public sealed class WasapiRoutingEngine : IDisposable
                 if (frames <= 0)
                     return;
 
-                var input = new float[frames * inputChannels];
-                Buffer.BlockCopy(e.Buffer, 0, input, 0, frames * inputChannels * bytesPerSample);
-
                 int slots = ChannelMapper.SlotCount;
-                var planar = new float[slots][];
-                for (int c = 0; c < slots; c++)
-                    planar[c] = new float[frames];
+                EnsureBuffers(frames, inputChannels, slots);
+
+                Buffer.BlockCopy(e.Buffer, 0, _inputBuf, 0, frames * inputChannels * bytesPerSample);
+                var input = new ReadOnlySpan<float>(_inputBuf, 0, frames * inputChannels);
+                var planar = _planarBufs;
 
                 if (inputChannels > 2)
                     ChannelMapper.DirectMap(input, frames, inputChannels, planar);
@@ -351,6 +370,7 @@ public sealed class WasapiRoutingEngine : IDisposable
         private readonly float[][] _channelBuf = new float[16][];
         private readonly int _channels;
         private float[] _interleaved = Array.Empty<float>();
+        private byte[] _bytes = Array.Empty<byte>();
         private int _frames;
         private bool _pushedAny;
 
@@ -403,9 +423,11 @@ public sealed class WasapiRoutingEngine : IDisposable
                     _interleaved[i * _channels + c] = _channelBuf[c][i];
             }
 
-            var bytes = new byte[_frames * _channels * 4];
-            Buffer.BlockCopy(_interleaved, 0, bytes, 0, bytes.Length);
-            _buffer.AddSamples(bytes, 0, bytes.Length);
+            int byteLen = _frames * _channels * 4;
+            if (_bytes.Length < byteLen)
+                _bytes = new byte[byteLen];
+            Buffer.BlockCopy(_interleaved, 0, _bytes, 0, byteLen);
+            _buffer.AddSamples(_bytes, 0, byteLen);
             _pushedAny = false;
         }
 

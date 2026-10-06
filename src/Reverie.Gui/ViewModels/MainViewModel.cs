@@ -36,13 +36,19 @@ public sealed class MainViewModel : ViewModelBase
     private bool _showAdvanced;
     private bool _freeMove;
     private bool _enableUpmix = true;
+    private readonly UserSettings _settings;
 
     public MainViewModel(IAudioDeviceEnumerator enumerator)
     {
         _enumerator = enumerator;
         _dispatcher = Dispatcher.CurrentDispatcher;
-        _layout = LayoutLibrary.All[0];
+        _settings = UserSettings.Load();
+        _layout = LayoutLibrary.Find(_settings.LayoutId) ?? LayoutLibrary.All[0];
         _presetName = _layout.Name;
+        _freeMove = _settings.FreeMove;
+        _enableUpmix = _settings.EnableUpmix;
+        _showAdvanced = _settings.ShowAdvanced;
+        _routing.EnableUpmix = _settings.EnableUpmix;
 
         ToggleEngineCommand = new RelayCommand(_ => ToggleEngine());
         RefreshDevicesCommand = new RelayCommand(_ => RefreshDevices());
@@ -197,19 +203,17 @@ public sealed class MainViewModel : ViewModelBase
     public string SwapSurroundText => SwapSurround ? "左右已对调" : "正常相位";
     public string SwapHeightText => SwapHeight ? "左右已对调" : "正常相位";
 
-    public bool ShowAdvanced
-    {
-        get => _showAdvanced;
-        set => SetProperty(ref _showAdvanced, value);
-    }
-
     public bool FreeMove
     {
         get => _freeMove;
         set
         {
             if (SetProperty(ref _freeMove, value))
+            {
+                _settings.FreeMove = value;
+                _settings.Save();
                 StatusText = value ? "自由移动已开启" : "自由移动已锁定，仅可点击选中";
+            }
         }
     }
 
@@ -222,7 +226,22 @@ public sealed class MainViewModel : ViewModelBase
             if (SetProperty(ref _enableUpmix, value))
             {
                 _routing.EnableUpmix = value;
+                _settings.EnableUpmix = value;
+                _settings.Save();
                 StatusText = value ? "立体声上混：开（多声道源仍直通）" : "立体声上混：关";
+            }
+        }
+    }
+
+    public bool ShowAdvanced
+    {
+        get => _showAdvanced;
+        set
+        {
+            if (SetProperty(ref _showAdvanced, value))
+            {
+                _settings.ShowAdvanced = value;
+                _settings.Save();
             }
         }
     }
@@ -235,6 +254,8 @@ public sealed class MainViewModel : ViewModelBase
             if (SetProperty(ref _layout, value) && value is not null)
             {
                 PresetName = value.Name;
+                _settings.LayoutId = value.Id;
+                _settings.Save();
                 ApplyLayout(value);
             }
         }
@@ -713,7 +734,7 @@ public sealed class UpmixGainViewModel : ViewModelBase
 
     public void Reload()
     {
-        _dispatcher.Invoke(() =>
+        _dispatcher.BeginInvoke(() =>
         {
             var (l, r) = _upmixer.GetGains(_index);
             Value = Math.Max(l, r);
